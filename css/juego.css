@@ -52,7 +52,8 @@ li::before {
 
 #header .ganaste{
 	width: 100%;
-	color: #FFFFFF;
+	height: 100%;
+	color: #EEEEEE;
 	background-color: #00bb2d;
 	font-size: 26px;
 	font-family: Arial;
@@ -62,19 +63,24 @@ li::before {
 
 #header .jugando{
 	width: 100%;
-	color: #000000;
+	height: 100%;
+	color: #EEEEEE;
 	font-size: 26px;
 	font-family: Arial;
 	text-align: center;
+    background-color: #666666;	
 }
 
 #footer{
 	clear: both;
-	text-align: right;
-	margin-right: 10px;
+	text-align: center;
 	font-family: Arial;
 	font-weight: 600;
-}
+	color: #EEEEEE;
+	padding-top: 7px;
+	padding-bottom: 7px;
+    background-color: #666666;
+	}
 
 #flecha{
   font-size: 50px;

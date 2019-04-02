@@ -2,6 +2,7 @@
 var instrucciones = ["Con las flechas del teclado mové la piezas del tablero", "Ordená las piezas hasta lograr la imagen del Objetivo"];
 // Arreglo para ir guardando los movimientos que se vayan realizando
 var movimientos = [];
+// En esta varible guardo la cantidad de movimientos de la mezcla aleatoria del sistema y luego la uso para restar y mostrar los movimientos puros del jugador
 var movSistema = 0;
 
 // Representación de la grilla. Cada número representa a una pieza.
@@ -30,8 +31,7 @@ function mostrarInstrucciones(instrucciones) {
 
 /* COMPLETAR: Crear función que agregue la última dirección al arreglo de movimientos
 y utilice actualizarUltimoMovimiento para mostrarlo en pantalla 
-!!! listo la completé! Pampa.-
-*/
+!!! listo la completé! Pampa.-*/
 
 function agregarUltimoMovimiento(direccion){
 	movimientos.push(direccion);
@@ -66,7 +66,7 @@ function chequearSiGano() {
 function mostrarCartelGanador() {
     //COMPLETAR  !!! listo la completé! Pampa.-
 	var a = movimientos.length-movSistema;
-	document.getElementById("header").innerHTML = "<div class='ganaste'>FELICITACIONES!!! LO LOGRASTE!!! ("+ a +" movimientos)</div>";
+	document.getElementById("header").innerHTML = "<div class='ganaste'>¡¡¡BIEN!!! Lo armaste en "+ a +" movimientos</div>";
 }
 
 //FUNCION AGREGADA PARA MOSTRAR EN HEADER LA CUENTA DE LOS MOVIMIENTOS REALIZADOS HASTA EL MOMENTO. Pampa.-
@@ -95,13 +95,13 @@ function intercambiarPosicionesGrilla(filaPos1, columnaPos1, filaPos2, columnaPo
 
 // Actualiza la posición de la pieza vacía
 function actualizarPosicionVacia(nuevaFila, nuevaColumna) {
-	//COMPLETAR
+	//COMPLETAR  !!! listo la completé! Pampa.-
 	filaVacia = nuevaFila;
 	columnaVacia = nuevaColumna;
 }
 
 
-// Para chequear si la posicón está dentro de la grilla.
+// Para chequear si la posición está dentro de la grilla.
 function posicionValida(fila, columna) {
 	return ((fila >= 0) && (fila <=2 ) && (columna >= 0) && (columna <=2 ));
 }
@@ -276,7 +276,7 @@ function capturarTeclas() {
           setTimeout(function() {
               mostrarCartelGanador();
               }, 500);
-            } else {
+            } else { // agregue este else para que muestre el conteo de movimientos si aun no llego a armarlo.  Pampa.-
 				mostrarMovimientoAlMomento();
 			}
             evento.preventDefault();
